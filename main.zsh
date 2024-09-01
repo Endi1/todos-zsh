@@ -6,6 +6,10 @@ todos() {
     if [[ "$1" == "capture" ]]; then
         todos-capture
     fi
+
+    if [[ "$1" == "open" ]]; then
+        todos-open
+    fi
 }
 
 todos-list() {
@@ -32,3 +36,6 @@ todos-capture() {
     cat /tmp/$filename.md >> ~/Notes/todo.md
 }
 
+todos-open() {
+    vim ~/Notes/todo.md
+}
